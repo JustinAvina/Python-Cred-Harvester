@@ -39,8 +39,8 @@ def GetCreds():
 
     def SendMail():
 
-        email = "jt.avina@icloud.com"
-        password = "Jtavina112601!"
+        email = input("What is your email>")
+        password = input("What is your password>")
 
         server = smtplib.SMTP("smtp.gmail.com", 587)
         server.starttls()

